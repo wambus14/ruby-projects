@@ -1,6 +1,5 @@
 
 def contain(string)
-   e_count = 0
    string_hash = Hash.new(0)
    dictionary = ["do", "the", "ought", 'is','in','on','of','out','or','he']
    words_arr = string.downcase.split(' ')
