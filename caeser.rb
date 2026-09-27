@@ -1,18 +1,19 @@
-def caesar(text, shift = 0) 
+# frozen_string_literal: true
+
+def caesar(text, shift = 0)
   text_array = text.split('')
   alphabet = ('a'..'z').to_a
   up_alphabet = ('A'..'Z').to_a
-  shifted_arr = text_array.map do
-    |char|
-     if alphabet.include?(char)  
-     char =  alphabet[char.ord - 97 - shift % 26]
-     elsif up_alphabet.include?(char)
-      char =  up_alphabet[char.ord - 65 - shift % 26]    
-     else
-      char = char
-     end 
+  shifted_arr = text_array.map do |char|
+    if alphabet.include?(char)
+      alphabet[char.ord - 97 - shift % 26]
+    elsif up_alphabet.include?(char)
+      up_alphabet[char.ord - 65 - shift % 26]
+    else
+      char
+    end
   end
- print shifted_arr.join.to_s
+  print shifted_arr.join
 end
 
 puts "\nEnter Text :"
